@@ -1,0 +1,4 @@
+SigninLogs
+| where LocationDetails.countryOrRegion != "Canada"
+| where ResultType == 0
+| project UserPrincipalName, LocationDetails, IPAddress, TimeGenerated
