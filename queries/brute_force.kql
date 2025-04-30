@@ -1,0 +1,4 @@
+SigninLogs
+| where ResultType != 0
+| summarize FailedLogins = count() by UserPrincipalName, bin(TimeGenerated, 10m)
+| where FailedLogins >= 5
